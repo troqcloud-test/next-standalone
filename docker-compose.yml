@@ -1,0 +1,13 @@
+services:
+  next-standalone:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: next-standalone
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - DATABASE_URL=${DATABASE_URL}
+      - REDIS_URL=${REDIS_URL}
